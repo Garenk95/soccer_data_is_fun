@@ -1,11 +1,14 @@
 package player_team_models;
 
+import java.util.HashMap;
+
 public class Player {
 
   private String name;
   private int goalCount;
   private int assistCount;
   private int minutesPlayed;
+
 
   public Player(String playerName, int playerGoalCount, int playerAssistCount, int playerMinutesPlayed){
     name = playerName;
