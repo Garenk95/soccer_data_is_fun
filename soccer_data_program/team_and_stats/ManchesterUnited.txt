@@ -1,0 +1,32 @@
+"Marcus Rashford",7,3,855
+"Bruno Fernandes",6,5,782
+"Juan Mata",2,2,459
+"Mason Greenwood",2,1,366
+"Anthony Martial",2,3,558
+"Donny van de Beek",1,1,373
+"Paul Pogba",1,2,527
+"Scott Mctominay",1,0,738
+"Aaron Wan-Bissaka",1,0,877
+"Harry Maguire",1,0,900
+"Edinson Cavani",1,0,93
+"Fred",0,0,731
+"Dean Henderson",0,0,270
+"Victor Lindelof",0,0,810
+"David de Gea",0,0,810
+"Nemanja Matic",0,0,406
+"Luke Shaw",0,2,877
+"Daniel James",0,0,250
+"Odion Ighalo",0,0,157
+"Eric Bailly",0,0,277
+"Timothy Fosu-Mensah",0,0,95
+"Axel Tuanzebe",0,0,167
+"Brandon Williams",0,1,180
+"Jesse Lingard",0,0,99
+"Teden Mengi",0,0,0
+"Lee Grant",0,0,0
+"Alex Telles",0,0,67
+"Diogo Dalot",0,0,90
+"Facundo Pellistri",0,0,0
+"Sergio Romero",0,0,0
+"Marcos Rojo",0,0,0
+"Phil Jones",0,0,0
