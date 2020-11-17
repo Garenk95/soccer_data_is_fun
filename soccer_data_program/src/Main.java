@@ -1,3 +1,6 @@
+import csv_parsing.CSVReader;
+import player_team_models.Player;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -10,7 +13,7 @@ public class Main {
   public static void main(String[] args) throws IOException {
     System.out.println("WELCOME TO THE FIRST ITERATION OF GAREN'S SOCCER DATA ANALYSIS PROGRAM");
 
-    TeamFileReader reader = new TeamFileReader();
+    CSVReader reader = new CSVReader();
 
     manchesterUnited = reader.readTeamFromFile("soccer_data_program/team_stats/ManchesterUnited.csv");
 
