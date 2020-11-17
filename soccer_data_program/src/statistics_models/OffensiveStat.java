@@ -1,5 +1,5 @@
 package statistics_models;
 
 public abstract class OffensiveStat {
-  public abstract int calculate();
+  public abstract double calculate();
 }

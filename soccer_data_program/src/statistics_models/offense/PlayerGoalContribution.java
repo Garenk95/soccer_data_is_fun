@@ -1,6 +1,9 @@
-import player_team_models.Player;
+package statistics_models.offense;
 
-public class PlayerGoalContribution {
+import player_team_models.Player;
+import statistics_models.OffensiveStat;
+
+public class PlayerGoalContribution extends OffensiveStat {
 
   public PlayerGoalContribution(){}
 
@@ -14,5 +17,10 @@ public class PlayerGoalContribution {
     } else {
       return ((double) ( (player.getAssistCount() * 0.75) + player.getGoalCount() ) / player.getMinutesPlayed()) * 100;
     }
+  }
+
+  @Override
+  public double calculate() {
+    return 0;
   }
 }
