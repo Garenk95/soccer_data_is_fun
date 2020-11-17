@@ -24,27 +24,22 @@ public class Main {
 
         teamName = teamName.toLowerCase();
 
-        // get the "offense/defence" parameter
         try {
           statDescription = args[i + 1];
           System.out.println("the stat description is: " + statDescription);
         } catch (ArrayIndexOutOfBoundsException e){
-          System.out.println( "Incorrect run command. Please use the following format: " );
-          System.out.println();
-          System.out.println("java src.Main 'Team Name', 'stat description' ");
-          System.out.println();
-          System.out.println( "Example: java src.Main Manchester United, offense" );
-          System.exit( 0 );
+          displayRunCommand();
         }
-        // break out of the for loop
+
+        break;
         //make the csv reader and read with the correct filepath
       }
     }
 
     System.out.println("WELCOME TO THE FIRST ITERATION OF GAREN'S SOCCER DATA ANALYSIS PROGRAM");
-
+    //System.out.println(teamName, statDescription);
     CSVReader reader = new CSVReader();
-
+    System.out.println(teamName +" " + statDescription);
     manchesterUnited = reader.readTeamFromFile("soccer_data_program/team_stats/manchesterunited.csv");
 
     PlayerGoalContribution contribution = new PlayerGoalContribution();
@@ -63,4 +58,14 @@ public class Main {
       System.out.println(player.getName() + " goal contribution: " + contribution.calculateGoalContributionWithMinutes( player ));
     }
   }
+
+  private static void displayRunCommand(){
+    System.out.println( "Incorrect run command. Please use the following format: " );
+    System.out.println();
+    System.out.println("java src.Main 'Team Name', 'stat description' ");
+    System.out.println();
+    System.out.println( "Example: java src.Main Manchester United, offense" );
+    System.exit( 0 );
+  }
+
 }
