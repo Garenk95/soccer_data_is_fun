@@ -8,8 +8,6 @@ public class Main {
 
   public static ArrayList<Player> manchesterUnited = new ArrayList<Player>();
 
-
-
   public static void main(String[] args) throws IOException {
     String teamName = "";
     String statDescription = "";
@@ -18,44 +16,43 @@ public class Main {
       teamName += args[i];
 
       if (args[i].lastIndexOf( ',' ) == args[i].length() - 1){
-        //at this point we have the team name, still need to do:
-        //format the teamName string to fit fileName
         teamName = teamName.substring( 0, teamName.indexOf( ',' ));
-
         teamName = teamName.toLowerCase();
 
         try {
           statDescription = args[i + 1];
-          System.out.println("the stat description is: " + statDescription);
         } catch (ArrayIndexOutOfBoundsException e){
           displayRunCommand();
         }
 
         break;
-        //make the csv reader and read with the correct filepath
       }
     }
 
     System.out.println("WELCOME TO THE FIRST ITERATION OF GAREN'S SOCCER DATA ANALYSIS PROGRAM");
-    //System.out.println(teamName, statDescription);
-    CSVReader reader = new CSVReader();
-    System.out.println(teamName +" " + statDescription);
-    manchesterUnited = reader.readTeamFromFile("soccer_data_program/team_stats/manchesterunited.csv");
 
-    PlayerGoalContribution contribution = new PlayerGoalContribution();
+    if ( statDescription.equals( "offense" ) ){
+      CSVReader reader = new CSVReader();
+      manchesterUnited = reader.readTeamFromFile("soccer_data_program/team_stats/" + teamName + ".csv");
 
-    System.out.println("----- DISPLAYING SIMPLE PLAYER GOAL CONTRIBUTION -----");
-    for (Player player: manchesterUnited){
-      System.out.println(player.getName() + " goal contribution: " + contribution.calculateSimpleGoalContribution( player ));
+      PlayerGoalContribution contribution = new PlayerGoalContribution();
+
+      System.out.println("----- DISPLAYING SIMPLE PLAYER GOAL CONTRIBUTION -----");
+      for (Player player: manchesterUnited){
+        System.out.println(player.getName() + " goal contribution: " + contribution.calculateSimpleGoalContribution( player ));
+      }
+
+      for (int i = 0; i < 5; i++){
+        System.out.println();
+      }
+
+      System.out.println("----- DISPLAYING GOAL CONTRIBUTION WITH MINUTES PLAYED -----");
+      for (Player player: manchesterUnited){
+        System.out.println(player.getName() + " goal contribution: " + contribution.calculateGoalContributionWithMinutes( player ));
+      }
     }
-
-    for (int i = 0; i < 5; i++){
-      System.out.println();
-    }
-
-    System.out.println("----- DISPLAYING GOAL CONTRIBUTION WITH MINUTES PLAYED -----");
-    for (Player player: manchesterUnited){
-      System.out.println(player.getName() + " goal contribution: " + contribution.calculateGoalContributionWithMinutes( player ));
+    else if ( statDescription.equals( "defense" ) ){
+      System.out.println("Sorry but defensive stats are not being recorded yet");
     }
   }
 
