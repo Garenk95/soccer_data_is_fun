@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-  public static ArrayList<Player> manchesterUnited = new ArrayList<Player>();
+  public static ArrayList<Player> team = new ArrayList<Player>();
 
   public static void main(String[] args) throws IOException {
     String teamName = "";
@@ -33,12 +33,12 @@ public class Main {
 
     if ( statDescription.equals( "offense" ) ){
       CSVReader reader = new CSVReader();
-      manchesterUnited = reader.readTeamFromFile("soccer_data_program/team_stats/" + teamName + ".csv");
+      team = reader.readTeamFromFile("soccer_data_program/team_stats/" + teamName + ".csv");
 
       PlayerGoalContribution contribution = new PlayerGoalContribution();
 
       System.out.println("----- DISPLAYING SIMPLE PLAYER GOAL CONTRIBUTION -----");
-      for (Player player: manchesterUnited){
+      for (Player player: team ){
         System.out.println(player.getName() + " goal contribution: " + contribution.calculateSimpleGoalContribution( player ));
       }
 
@@ -47,7 +47,7 @@ public class Main {
       }
 
       System.out.println("----- DISPLAYING GOAL CONTRIBUTION WITH MINUTES PLAYED -----");
-      for (Player player: manchesterUnited){
+      for (Player player: team ){
         System.out.println(player.getName() + " goal contribution: " + contribution.calculateGoalContributionWithMinutes( player ));
       }
     }
