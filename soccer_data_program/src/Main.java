@@ -12,7 +12,7 @@ public class Main {
 
     TeamFileReader reader = new TeamFileReader();
 
-    manchesterUnited = reader.readTeamFromFile("./team_and_stats/ManchesterUnited.txt");
+    manchesterUnited = reader.readTeamFromFile("soccer_data_program/team_stats/ManchesterUnited.csv");
 
     PlayerGoalContribution contribution = new PlayerGoalContribution();
 
