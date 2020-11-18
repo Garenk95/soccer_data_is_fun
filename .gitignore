@@ -10,4 +10,5 @@
 *.idea
 *.class
 *.iml
+out
 soccer_data_program/src/statistics_models/offense/offensiveStatisticsTokens.java
