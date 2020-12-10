@@ -1,10 +1,18 @@
+import gui.HelloWorld;
+
 public class Program {
 
-  public Program(){
+  private HelloWorld helloWorld;
 
+  public Program(){
+    //init program variables here
+
+    helloWorld = new HelloWorld();
   }
   void run(){
+    //execute program commands here
 
+    helloWorld.run();
   }
 
   public static void main(String args[]){
